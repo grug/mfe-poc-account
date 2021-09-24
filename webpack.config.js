@@ -34,7 +34,10 @@ module.exports = {
       exposes: {
         "./Account": "./src/Account",
       },
-      shared: { react: { singleton: true }, "react-dom": { singleton: true } },
+      shared: {
+        react: { singleton: true, version: "17.0.2" },
+        "react-dom": { singleton: true },
+      },
     }),
     new HtmlWebpackPlugin({
       template: "./public/index.html",
