@@ -28,8 +28,8 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "account",
-      library: { type: "var", name: "account" },
+      name: "Account",
+      library: { type: "var", name: "Account" },
       filename: "remoteEntry.js",
       exposes: {
         "./Account": "./src/Account",
@@ -42,18 +42,3 @@ module.exports = {
   ],
   resolve: { extensions: ["*", ".js", ".jsx"] },
 };
-
-// function getRemoteEntryUrl(port) {
-//   const { CODESANDBOX_SSE, HOSTNAME = "" } = process.env;
-
-//   // Check if the example is running on codesandbox
-//   // https://codesandbox.io/docs/environment
-//   if (!CODESANDBOX_SSE) {
-//     return `//localhost:${port}/remoteEntry.js`;
-//   }
-
-//   const parts = HOSTNAME.split("-");
-//   const codesandboxId = parts[parts.length - 1];
-
-//   return `//${codesandboxId}-${port}.sse.codesandbox.io/remoteEntry.js`;
-// }
