@@ -29,13 +29,12 @@ module.exports = {
   plugins: [
     new ModuleFederationPlugin({
       name: "Account",
-      library: { type: "var", name: "Account" },
       filename: "remoteEntry.js",
       exposes: {
         "./Account": "./src/Account",
       },
       shared: {
-        react: { singleton: true, requiredVersion: "17.0.2" },
+        react: { singleton: true },
         "react-dom": { singleton: true },
       },
     }),
